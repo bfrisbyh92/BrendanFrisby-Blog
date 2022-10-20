@@ -2,7 +2,7 @@ import React from 'react'
 
 const PostWidget = () => {
   return (
-    <div>PostWidget</div>
+    <div className="text-white">PostWidget</div>
   )
 }
 

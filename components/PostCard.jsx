@@ -2,7 +2,7 @@ import React from 'react'
 
 const PostCard = ({ post }) => {
   return (
-    <div>
+    <div className="text-white">
       {post.title}
       {post.excerpt}
     </div>
