@@ -5,7 +5,7 @@ const posts = [
   { title: "React with Tailwind", excerpt: "Learn React with Tailwind" },
 ];
 
-export default function Home( ) {
+export default function Home() {
   return (
     <div className="container mx-auto px-10 mb-8">
       {/* <FeaturedPosts /> */}
