@@ -7,7 +7,6 @@ export const getPosts = async () => {
     query MyQuery {
       postsConnection {
         edges {
-          cursor
           node {
             author {
               bio
@@ -19,14 +18,17 @@ export const getPosts = async () => {
             }
             createdAt
             slug
-            title
             excerpt
-            categories {
-              name
-              slug
+            title
+            featuredImage {
+              url
             }
           }
         }
+      }
+      categories {
+        name
+        slug
       }
     }
   `;
@@ -34,10 +36,8 @@ export const getPosts = async () => {
   // featuredImage {
   //   url
   // }
-  // ^^^ Should go below excerpt but is throwing an error.
-
   const result = await request(graphqlAPI, query);
-
+  console.log(result);
   return result.postsConnection.edges;
 };
 
