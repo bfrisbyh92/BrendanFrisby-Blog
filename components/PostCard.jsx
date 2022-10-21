@@ -81,9 +81,12 @@ const PostCard = ({ post }) => {
   return (
     <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
       <div className="relative shadow-md inline-block w-full h-60 lg:h-80 mb-6">
-        <Image
+        {/* <Image */}
+        <img
           src={post.featuredImage.url}
+          // src="https://media.graphassets.com/zs0W8xyHQvKPVgqBIwOA"
           alt={post.title}
+          layout="fill"
           className="object-top absolute h-80 w-full object-cover shadow-lg rounded-t-lg lg:rounded-lg"
         />
       </div>

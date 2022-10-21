@@ -4,11 +4,6 @@ import Header from "../components/Header";
 
 import { getPosts } from "../services/index";
 
-// const postss = [
-//   { title: "React Testing", excerpt: "Learn React Testing" },
-//   { title: "React with Tailwind", excerpt: "Learn React with Tailwind" }
-// ];
-
 export default function Home({ posts }) {
   console.log(posts);
   return (
