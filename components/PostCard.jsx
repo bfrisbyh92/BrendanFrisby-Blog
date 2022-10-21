@@ -3,6 +3,24 @@ import Image from "next/image";
 import moment from "moment";
 import Link from "next/link";
 
+const PostCard = ({ post }) => {
+  console.log(post);
+  return (
+    <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
+      <div className="relative shadow-md inline-block w-full h-60 lg:h-80 mb-6">
+        <img
+          src={post.featuredImage.url}
+          alt={post.title}
+          className="object-top absolute h-80 w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg"
+        />
+      </div>
+      <h1 className="transition duration-700 text-center mb-8 cursor-pointer hover:text-pink-600 text-3xl font-semibold">
+        <Link href={`/post/${post.slug}`}>{post.title}</Link>
+      </h1>
+    </div>
+  );
+};
+
 // import { graphCMSImageLoader } from "../util";
 
 // const PostCard = ({ post }) => (
@@ -75,23 +93,5 @@ import Link from "next/link";
 //     </div>
 //   </div>
 // );
-
-const PostCard = ({ post }) => {
-  console.log(post);
-  return (
-    <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
-      <div className="relative shadow-md inline-block w-full h-60 lg:h-80 mb-6">
-        {/* <Image */}
-        <img
-          src={post.featuredImage.url}
-          // src="https://media.graphassets.com/zs0W8xyHQvKPVgqBIwOA"
-          alt={post.title}
-          layout="fill"
-          className="object-top absolute h-80 w-full object-cover shadow-lg rounded-t-lg lg:rounded-lg"
-        />
-      </div>
-    </div>
-  );
-};
 
 export default PostCard;
