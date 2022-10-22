@@ -1,18 +1,20 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
+/* eslint-disable react/jsx-indent */
+/* eslint-disable max-len */
+/* eslint-disable quotes */
 import React, { useState, useEffect } from "react";
-
+import { Avatar } from "@mui/material";
 import Link from "next/link";
-// import { getCategories } from "../services";
+import { getCategories } from "../services";
 
 const Header = () => {
-//   const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState([]);
 
-const categories = [ { name: "React", slug: 'react'}, {name: "Web Development", slug: 'web-dev'}]
-
-//   useEffect(() => {
-//     getCategories().then((newCategories) => {
-//       setCategories(newCategories);
-//     });
-//   }, []);
+  useEffect(() => {
+    getCategories().then((newCategories) => {
+      setCategories(newCategories);
+    });
+  }, []);
 
   return (
     <div className="container mx-auto px-10 mb-8">
@@ -20,7 +22,7 @@ const categories = [ { name: "React", slug: 'react'}, {name: "Web Development", 
         <div className="md:float-left block">
           <Link href="/">
             <span className="cursor-pointer font-bold text-4xl text-white">
-              Brendan Frisby - Tech Blog 
+              Brendan Frisby -- Tech Blog
             </span>
           </Link>
         </div>
@@ -32,6 +34,11 @@ const categories = [ { name: "React", slug: 'react'}, {name: "Web Development", 
               </span>
             </Link>
           ))}
+          {/* <img
+            src="https://brendanfrisby.vercel.app/assets/images/profile.webp"
+            alt="header-image"
+            className="header-profile-image"
+          /> */}
         </div>
       </div>
     </div>
