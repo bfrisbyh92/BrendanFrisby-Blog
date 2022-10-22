@@ -33,11 +33,10 @@ export const getPosts = async () => {
     }
   `;
 
-  // featuredImage {
-  //   url
-  // }
   const result = await request(graphqlAPI, query);
-  console.log(result);
+  console.log(
+    `getPosts function inside services folder data is pulling: ${result}`
+  );
   return result.postsConnection.edges;
 };
 
@@ -256,6 +255,8 @@ export const getRecentPosts = async () => {
     }
   `;
   const result = await request(graphqlAPI, query);
-
+  console.log(
+    `result for getRecentPosts function in services folder: ${result}`
+  );
   return result.posts;
 };
